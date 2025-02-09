@@ -1,304 +1,201 @@
-/* Paleta de colores en RGBA */
-.Electric-Blue-1-rgba { color: rgba(125, 249, 255, 1); }
-.Electric-Blue-2-rgba { color: rgba(204, 204, 204, 1); }
-.Electric-Blue-3-rgba { color: rgba(7, 13, 13, 1); }
-.Electric-Blue-4-rgba { color: rgba(55, 247, 19, 1); }
-.Electric-Blue-5-rgba { color: rgba(235, 79, 12, 1); }
-.Electric-Blue-6-rgba { color: rgba(247, 247, 247, 1); }
-
-/*Google Fonts */
-/* OPCIÓN 1 font-family:   font-family: "Roboto Mono", serif; */
-/* OPCIÓN 2 font-family: "Open Sans", serif;*/
-
-
-/*Normalización*/
-*{
+/* NORMALIZACIÓN */
+* {
     padding: 0;
     margin: 0;
-    box-sizing: border-box;/*Esto mantiene el anchoy el alto a pesar de padding y border*/
-    font-family: "Open Sans", serif; 
-    list-style: none;/*Quita los puntos de la lista*/
-    text-decoration: none;/*Quita el subrayado de los enlaces*/
-    color: rgba(247, 247, 247, 1);
+    box-sizing: border-box;
+    font-family: 'Inconsolata', monospace;
+    list-style: none;
+    text-decoration: none;
+    color: white;
 }
 
-body{
-    background-color: black;/*TODO:Borrar cuanto tengamos el fondo final*/
+body {
+    background-color: black;
 }
-header{
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+
+/* HEADER */
+header {
     position: fixed;
-    right: 0;
     top: 0;
-    z-index: 100;
     width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
     padding: 15px 3%;
     background-color: transparent;
+    z-index: 100;
 }
-.logo{
-    font-size: 30px;
-    font-weight: 800px;
+
+.logo {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
 }
-.nav-list{
-    display: flex;/*sirve pala que los elementos de linea se pongan uno al lado del otro*/
+
+/* MENÚ */
+.menu-icon-action {
+    display: none;
+    cursor: pointer;
 }
-.nav-list a{
+
+.navlist {
+    display: flex;
+    transition: all 0.5s ease;
+}
+
+.navlist a {
     margin-left: 60px;
     font-size: 15px;
     font-weight: 600;
-    border-bottom: 2px solid transparent;/*Este es un subrayado transparente*/
-    transition: all .5s ease; /*esto es para animar*/
-    -webkit-transition: all .5s ease;
-    -moz-transition: all .5s ease;
-    -ms-transition: all .5s ease;
-    -o-transition: all .5s ease;
+    border-bottom: 2px solid transparent;
+    transition: all .5s ease;
 }
-.nav-list a:hover{
-    border-bottom: 2px solid  rgba(247, 247, 247, 1);;
+
+.navlist a:hover {
+    border-bottom: 2px solid white;
 }
-/* #menu-icon{
-    display: none;/*Esto esta en display none para que se vea cuando la pagina estee colapsada
-} */
- #menu-icon{
-    /* color: rgba(247, 247, 247, 1); */
+
+#menu-icon {
+    display: none;
     font-size: 35px;
-    z-index: 101;/*para que este sobre el header*/
-    cursor: pointer;/*para que aparezca la manito*/
- }
-#menu-toggle{
-    display: none;/*nunca se verá el checkbox*/
+    cursor: pointer;
 }
-#menu-icon-action{
-    display: none;/*en none es para que no se le pueda hacer click*/
-}
-.hero{
-    height: 100%;
+
+/* HERO */
+.hero {
     width: 100%;
     min-height: 100vh;
-    background: linear-gradient(245.59deg, rgb(66, 30, 14) 0%, rgb(14, 39, 9) 25%, rgb(23, 36, 21) 75% );
-    position: relative;/*Relativo al contenedor*/
-    display: grid;/*para que el hero se pueda hacer en dos columnas*/
-    grid-template-columns: 1fr 1fr;/*dos columnas*/
-    align-items: center; /*para alinear verticalmente el hero*/
-    gap: 2rem; /*espacio entre las dos columnas*/
-}
-section{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+    gap: 2rem;
     padding: 0 8%;
+    background: linear-gradient(245.59deg, #31494e 0%, #385e70 25%, #131313 75%);
 }
 
+.hero-text {
+    text-align: left;
+}
 
-.hero-text h1{
-    font-family: "Roboto Mono", serif;
+.hero-text h1 {
+    font-family: 'Roboto Mono', monospace;
     font-size: 50px;
     line-height: 1;
-    margin: 0 0 30px;
 }
-.hero-text h5{
-font-size: 14px;
-font-weight: 400;
-margin-bottom: 25px;
-}
-.hero-text h4{
-    font-size: 18px;
-    font-weight: 600px;
-    margin-top: 10px;
-}
-.hero-text p{
+
+.hero-text p {
     font-size: 80%;
-    margin-bottom: 40px;
     line-height: 1.9;
+    margin-bottom: 40px;
 }
-.hero-img img{
-    width: 400px;
-    border: 4px solid rgb(15, 39, 39);
+
+.hero-img img {
     border-radius: 50%;
-    -webkit-border-radius: 50%;
-    -moz-border-radius: 50%;
-    -ms-border-radius: 50%;
-    -o-border-radius: 50%;
     width: 400px;
-    margin: 10% 0 10%;
     height: auto;
-    transition: all 5s linear;
-    -webkit-transition: all 5s linear;
-    -moz-transition: all 5s linear;
-    -ms-transition: all 5s linear;
-    -o-transition: all 5s linear;
+    transition: all 0.5s linear;
 }
-.hero-img img:hover{
+
+.hero-img img:hover {
     width: 450px;
-    opacity: 0.6;    
+    opacity: 0.6;
 }
-.hero-text a{
+
+.hero-text a {
     display: inline-block;
-    background-color: rgb(14, 6, 6);
-    border: 1px solid transparent;
+    background-color: #4d4d4d;
     padding: 15px 30px;
-    line-height: 1.4;
     font-size: 14px;
     font-weight: 500;
     border-radius: 30px;
-    -webkit-border-radius: 30px;
-    -moz-border-radius: 30px;
-    -ms-border-radius: 30px;
-    -o-border-radius: 30px;
     text-transform: uppercase;
-    transition: all .5 ease;
-    -webkit-transition: all .5 ease;
-    -moz-transition: all .5 ease;
-    -ms-transition: all .5 ease;
-    -o-transition: all .5 ease;
+    transition: all .5s ease;
 }
-.hero-text a:hover{
+
+.hero-text a:hover {
     background-color: transparent;
-    border: 1px solid rgba(247, 247, 247, 1);
+    border: 1px solid white;
     transform: translateX(8px);
-    -webkit-transform: translateX(8px);
-    -moz-transform: translateX(8px);
-    -ms-transform: translateX(8px);
-    -o-transform: translateX(8px);
-}
-.hero-text a.videos{
-    background-color: transparent;
-    border: 1px solid rgba(247, 247, 247, 1);
-    margin-left: 20px;
-}
-.hero-text a.videos i{
-    vertical-align: middle;
-    margin-right: 5px;
-}
-.icons{
-    position: absolute;
-    top: 50vh;
-    padding: 0 3%;
-    transform: translateY(-50%);
-    -webkit-transform: translateY(-50%);
-    -moz-transform: translateY(-50%);
-    -ms-transform: translateY(-50%);
-    -o-transform: translateY(-50%);
-}
-.icons i {
-    display: block;
-    margin: 26px 0;
-    font-size: 24px;
-    transition: all 0.5 ease;
-    -webkit-transition: all 0.5 ease;
-    -moz-transition: all 0.5 ease;
-    -ms-transition: all 0.5 ease;
-    -o-transition: all 0.5 ease;
-}
-.icons i:hover{
-    color: rgba(247, 247, 247, 1);
-    transform: translateY(-5px);
-    -webkit-transform: translateY(-5px);
-    -moz-transform: translateY(-5px);
-    -ms-transform: translateY(-5px);
-    -o-transform: translateY(-5px);
-}
-.scroll-down{
-    position: absolute;
-    bottom: 6%;
-    right: 3%;
-}
-.scroll-down i {
-    display: block;
-    padding: 12px;
-    font-size: 25px;
-    background-color: rgb(14, 11, 11);
-    border-radius: 30px;
-    -webkit-border-radius: 30px;
-    -moz-border-radius: 30px;
-    -ms-border-radius: 30px;
-    -o-border-radius: 30px;
-    transition: all 0.5 ease;
-    -webkit-transition: all 0.5 ease ;
-    -moz-transition: all 0.5 ease ;
-    -ms-transition: all 0.5 ease ;
-    -o-transition: all 0.5 ease ;
-}
-.scroll-down i:hover{
-    transform: translateY(-5px);
-    -webkit-transform: translateY(-5px);
-    -moz-transform: translateY(-5px);
-    -ms-transform: translateY(-5px);
-    -o-transform: translateY(-5px);
-}
-/* Vamos a hacer para medidas diferentes a  desktop */
-@media (max-width:992px){
-    section{
-        padding: 0 3%;
-        transition: .2s;
-        -webkit-transition: .2s;
-        -moz-transition: .2s;
-        -ms-transition: .2s;
-        -o-transition: .2s;
 }
 
-.icons{
-    display: none;
-}
-.hero-img{
-    text-align: center;
-}
-.hero-text{
-    padding-top: 0;
-}
-.hero-img img{
-    width: 80%;
-    margin: 10% 0 0 10%;
-}
-.hero-text p{
-    font-size: 70%;
-}
-.scroll-down{
-    display: none;
-}
+/* RESPONSIVE */
+@media (max-width: 992px) {
+    .hero {
+        grid-template-columns: 1fr;
+        text-align: center;
+    }
+
+    .hero-img img {
+        width: 70%;
+        margin: 0 auto;
+    }
 }
 
-@media(max-width: 768px){
-.menu-icon-action{
-    display: block;
+@media (max-width: 768px) {
+    .menu-icon-action {
+        display: block;
+    }
+
+    #menu-icon {
+        display: block;
+    }
+
+    .navlist {
+        position: absolute;
+        top: 60px;
+        right: -100%;
+        width: 200px;
+        background-color: #021719ef;
+        flex-direction: column;
+        align-items: center;
+        padding: 20px;
+        transition: all .5s ease-out;
+    }
+
+    .navlist a {
+        display: block;
+        margin: 10px 0;
+    }
+
+    .navlist.open {
+        right: 0;
+    }
 }
-#menu-icon{
-    display: block;
-}
-.hero-text{
-    text-align: center;
-    padding-top: 100px;
-}
-.hero-img img{
-    margin:0;
-}
-.hero{
-    height: 100%;
-    gap: 1rem;
-    grid-template-columns: 1fr;
-}
-.nav-list{
-    position: absolute;
-    top:100%;
-    right: -100%;
-    width: 200px;
-    height: 180px;
-    background-color: rgba(24, 23, 23, 0.459);
+
+
+
+
+.icons {
     display: flex;
-    flex-direction: column;
-    align-items: center;
-    padding: 30px 20px;
-    transition: all .5s ease-out;
-    -webkit-transition: all .5s ease-out;
-    -moz-transition: all .5s ease-out;
-    -ms-transition: all .5s ease-out;
-    -o-transition: all .5s ease-out;
+    justify-content: center; /* Centra los iconos */
+    gap: 20px; /* Espacio entre iconos */
+    margin-bottom: 20px; /* Evita que se peguen al borde */
 }
-.nav-list a{
-    display: block;
-    margin: 7px 0;
-}
-#menu-toggle:checked + label.menu-icon-action +ul{
-    right: 0;
 
+.icons a {
+    font-size: 24px; /* Tamaño de iconos */
+    color: #333; /* Color ajustable */
+    transition: color 0.3s ease;
 }
+
+.icons a:hover {
+    color: #0077b5; /* Color al pasar el mouse (azul LinkedIn, ajustable) */
 }
+
+.scroll-down {
+    text-align: center;
+    margin-top: 20px; /* Separación del borde */
+}
+
+.scroll-down a {
+    font-size: 30px;
+    color: #555;
+    transition: transform 0.3s ease;
+}
+
+.scroll-down a:hover {
+    transform: translateY(5px); /* Efecto de movimiento */
+}
+
+
+
